@@ -36,7 +36,7 @@ public class BbsController {
     @RequestMapping(value="/bbs/testMapArgumentResolver.do")
     public ModelAndView testMapArgumentResolver(CommandMap commandMap) throws Exception{
         ModelAndView mv = new ModelAndView(""); 
-         
+          
         if(commandMap.isEmpty() == false){
             Iterator<Entry<String,Object>> iterator = commandMap.getMap().entrySet().iterator();
             Entry<String,Object> entry = null;
