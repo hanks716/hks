@@ -29,7 +29,7 @@ public class BbsController {
          
         List<Map<String,Object>> list = bbsService.selectBoardList(commandMap);
         mv.addObject("list", list);
-         
+          
         return mv;
     }
     
