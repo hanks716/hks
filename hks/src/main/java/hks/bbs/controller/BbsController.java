@@ -44,7 +44,7 @@ public class BbsController {
                 entry = iterator.next();
                 log.debug("key : "+entry.getKey()+", value : "+entry.getValue());
             }
-        }
+        } 
         return mv;
     }
 }
