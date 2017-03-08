@@ -26,10 +26,25 @@ public class BbsController {
     @RequestMapping(value="/bbs/openBoardList.do")
     public ModelAndView openBoardList(Map<String,Object> commandMap) throws Exception{
         ModelAndView mv = new ModelAndView("/bbs/boardList");
-         
+        
         List<Map<String,Object>> list = bbsService.selectBoardList(commandMap);
         mv.addObject("list", list);
           
+        return mv;
+    }
+    
+    @RequestMapping(value="/bbs/openBoardWrite.do")
+    public ModelAndView openBoradWrite(Map<String,Object> commandMap) throws Exception{
+    	ModelAndView mv = new ModelAndView("/bbs/boardWrite");   	
+    	return mv;
+    }
+    
+    @RequestMapping(value="/bbs/insertBoard.do")
+    public ModelAndView insertBoard(CommandMap commandMap) throws Exception{
+        ModelAndView mv = new ModelAndView("redirect:/bbs/openBoardList.do");
+         
+        bbsService.insertBoard(commandMap.getMap());
+         
         return mv;
     }
     
@@ -47,5 +62,7 @@ public class BbsController {
         }   
         return mv;
     }
+
+    
 }
 

@@ -15,5 +15,10 @@ public class BbsDAO extends AbstractDAO {
 		
 		return (List<Map<String, Object>>)selectList("bbs.selectBoardList",map);
 	}
+	
+	public void insertBoard(Map<String, Object> map) throws Exception{
+	    insert("bbs.insertBoard", map);
+	}
+
 
 }

@@ -20,5 +20,10 @@ public class BbsServiceImpl implements BbsService {
 		
 		return bbsDAO.selectBoardList(map);
 	}
+	
+	@Override
+	public void insertBoard(Map<String, Object> map) throws Exception {
+	    bbsDAO.insertBoard(map);
+	}
 
 }
